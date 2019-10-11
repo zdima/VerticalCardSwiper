@@ -93,4 +93,15 @@ import Foundation
      - returns: The size of each card for its respective index as a CGSize.
      */
     @objc optional func sizeForItem(verticalCardSwiperView: VerticalCardSwiperView, index: Int) -> CGSize
+
+    /**
+     Called before animateOffScreen is called.
+     
+     You can use this to add condition if swipe should happened or not.
+     If return false, card will be put back.
+     - parameter card: The CardCell that the user is currently dragging.
+     - parameter swipeDirection: The direction in which the card is being dragged.
+     */
+    @objc optional func shouldSwipeAway(cell: CardCell, swipeDirection: SwipeDirection) -> Bool
+    
 }

@@ -47,4 +47,14 @@ internal protocol CardDelegate: class {
      - parameter swipeDirection: The direction in which the card is being dragged.
      */
     func didDragCard(cell: CardCell, swipeDirection: SwipeDirection)
+
+    /**
+     Called before animateOffScreen is called.
+     
+     You can use this to add condition if swipe should happened or not.
+     If return false, card will be put back.
+     - parameter card: The CardCell that the user is currently dragging.
+     - parameter swipeDirection: The direction in which the card is being dragged.
+     */
+    func shouldSwipeAway(cell: CardCell, swipeDirection: SwipeDirection) -> Bool
 }

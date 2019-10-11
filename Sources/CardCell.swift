@@ -91,7 +91,15 @@ import UIKit
         let swipePercentageMargin = self.bounds.width * 0.4
         let cardCenterX = self.frame.midX
         let centerX = self.bounds.midX
+        let direction = determineCardSwipeDirection()
 
+        // consult with delegate if card should be animated off the screen
+        let allowOffScreen = delegate?.shouldSwipeAway(cell: self, swipeDirection: direction) ?? true
+        if !allowOffScreen {
+            self.resetToCenterPosition()
+            return
+        }
+        
         // check for left or right swipe and if swipePercentageMargin is reached or not
         if cardCenterX < centerX - swipePercentageMargin || cardCenterX > centerX + swipePercentageMargin {
             animateOffScreen(angle: angle)

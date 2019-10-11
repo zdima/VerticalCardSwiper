@@ -241,6 +241,10 @@ extension VerticalCardSwiper: CardDelegate {
             self.delegate?.didDragCard?(card: cell, index: index, swipeDirection: swipeDirection)
         }
     }
+    
+    func shouldSwipeAway(cell: CardCell, swipeDirection: SwipeDirection) -> Bool {
+        return self.delegate?.shouldSwipeAway?(cell: cell, swipeDirection: swipeDirection) ?? true
+    }
 
     fileprivate func setupCardSwipeDelegate() {
         self.swipedCard?.delegate = self
