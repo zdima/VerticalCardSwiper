@@ -49,8 +49,9 @@ import Foundation
      - parameter card: The CardCell that the user is currently dragging.
      - parameter index: The index of the CardCell that is currently being dragged.
      - parameter swipeDirection: The direction in which the card is being dragged.
+     - parameter horizontalTranslation: The horizontal translation the card animates in.
      */
-    @objc optional func didDragCard(card: CardCell, index: Int, swipeDirection: SwipeDirection)
+    @objc optional func didDragCard(card: CardCell, index: Int, swipeDirection: SwipeDirection, horizontalTranslation: CGFloat)
 
     /**
      Tells the delegate when the user taps a card.

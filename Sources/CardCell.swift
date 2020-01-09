@@ -51,7 +51,7 @@ import UIKit
      */
     public func animateCard(angle: CGFloat, horizontalTranslation: CGFloat) {
 
-        delegate?.didDragCard(cell: self, swipeDirection: determineCardSwipeDirection())
+        delegate?.didDragCard(cell: self, swipeDirection: determineCardSwipeDirection(), horizontalTranslation: horizontalTranslation)
 
         var transform = CATransform3DIdentity
         transform = CATransform3DRotate(transform, angle, 0, 0, 1)

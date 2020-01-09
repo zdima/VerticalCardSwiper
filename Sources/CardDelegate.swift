@@ -45,8 +45,9 @@ internal protocol CardDelegate: class {
      You can use this to add some custom features to a card when it enters a certain `swipeDirection` (like overlays).
      - parameter card: The CardCell that the user is currently dragging.
      - parameter swipeDirection: The direction in which the card is being dragged.
+     - parameter horizontalTranslation: The horizontal translation the card animates in.
      */
-    func didDragCard(cell: CardCell, swipeDirection: SwipeDirection)
+    func didDragCard(cell: CardCell, swipeDirection: SwipeDirection, horizontalTranslation: CGFloat)
 
     /**
      Called before animateOffScreen is called.

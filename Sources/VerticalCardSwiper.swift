@@ -236,9 +236,9 @@ extension VerticalCardSwiper: CardDelegate {
         }
     }
 
-    internal func didDragCard(cell: CardCell, swipeDirection: SwipeDirection) {
+    internal func didDragCard(cell: CardCell, swipeDirection: SwipeDirection, horizontalTranslation: CGFloat) {
         if let index = self.verticalCardSwiperView.indexPath(for: cell)?.row {
-            self.delegate?.didDragCard?(card: cell, index: index, swipeDirection: swipeDirection)
+            self.delegate?.didDragCard?(card: cell, index: index, swipeDirection: swipeDirection, horizontalTranslation: horizontalTranslation)
         }
     }
     
