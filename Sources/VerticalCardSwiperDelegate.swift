@@ -54,6 +54,14 @@ import Foundation
     @objc optional func didDragCard(card: CardCell, index: Int, swipeDirection: SwipeDirection, horizontalTranslation: CGFloat)
 
     /**
+     Called when swipe has been canceled.
+     
+     You can use this to add code to reset card status.
+     - parameter card: The CardCell that the user is currently dragging.
+     */
+    func swipeCanceled(cell: CardCell, index: Int)
+
+    /**
      Tells the delegate when the user taps a card.
      - parameter verticalCardSwiperView: The `VerticalCardSwiperView` that displays the cardcells.
      - parameter index: The index of the CardCell that was tapped.
@@ -104,5 +112,5 @@ import Foundation
      - parameter swipeDirection: The direction in which the card is being dragged.
      */
     @objc optional func shouldSwipeAway(cell: CardCell, swipeDirection: SwipeDirection) -> Bool
-    
+
 }

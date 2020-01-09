@@ -69,6 +69,8 @@ import UIKit
         let centerX = self.bounds.midX
         let initialSpringVelocity = abs(cardCenterX - centerX)/100
 
+        delegate?.swipeCanceled(cell: self)
+
         UIView.animate(withDuration: 0.5,
                        delay: 0,
                        usingSpringWithDamping: 0.6,
@@ -99,7 +101,7 @@ import UIKit
             self.resetToCenterPosition()
             return
         }
-        
+
         // check for left or right swipe and if swipePercentageMargin is reached or not
         if cardCenterX < centerX - swipePercentageMargin || cardCenterX > centerX + swipePercentageMargin {
             animateOffScreen(angle: angle)

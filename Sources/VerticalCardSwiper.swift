@@ -241,7 +241,7 @@ extension VerticalCardSwiper: CardDelegate {
             self.delegate?.didDragCard?(card: cell, index: index, swipeDirection: swipeDirection, horizontalTranslation: horizontalTranslation)
         }
     }
-    
+
     func shouldSwipeAway(cell: CardCell, swipeDirection: SwipeDirection) -> Bool {
         return self.delegate?.shouldSwipeAway?(cell: cell, swipeDirection: swipeDirection) ?? true
     }
@@ -249,6 +249,13 @@ extension VerticalCardSwiper: CardDelegate {
     fileprivate func setupCardSwipeDelegate() {
         self.swipedCard?.delegate = self
     }
+
+    func swipeCanceled(cell: CardCell) {
+        if let index = self.verticalCardSwiperView.indexPath(for: cell)?.row {
+            delegate?.swipeCanceled(cell: cell, index: index)
+        }
+    }
+
 }
 
 extension VerticalCardSwiper: UIGestureRecognizerDelegate {

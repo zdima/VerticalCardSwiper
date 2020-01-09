@@ -58,4 +58,13 @@ internal protocol CardDelegate: class {
      - parameter swipeDirection: The direction in which the card is being dragged.
      */
     func shouldSwipeAway(cell: CardCell, swipeDirection: SwipeDirection) -> Bool
+
+    /**
+     Called when swipe has been canceled.
+     
+     You can use this to add code to reset card status.
+     - parameter card: The CardCell that the user is currently dragging.
+     */
+    func swipeCanceled(cell: CardCell )
+
 }

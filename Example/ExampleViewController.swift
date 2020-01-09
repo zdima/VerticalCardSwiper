@@ -115,4 +115,9 @@ class ExampleViewController: UIViewController, VerticalCardSwiperDelegate, Verti
     func didSwipeCardAway(card: CardCell, index: Int, swipeDirection: SwipeDirection) {
         // called when a card has animated off screen entirely.
     }
+
+    func swipeCanceled(cell: CardCell, index: Int) {
+        //
+    }
+
 }
